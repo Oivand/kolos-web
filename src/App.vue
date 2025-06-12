@@ -1,23 +1,27 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
+  <div id="app">
+    <header class="app-header">
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <router-link to="/">Главная</router-link> | <router-link to="/news">Лента</router-link> |
+        <router-link to="/profile">Профиль</router-link> |
+        <router-link to="/chats">Чаты</router-link> |
+        <router-link to="/groups">Группы</router-link> |
+        <router-link to="/publication">Опубликовать</router-link> |
+        <router-link to="/report">Жалоба</router-link>
+        <button v-if="authStore.isAuthenticated" @click="authStore.logout()" class="logout-button">
+          Выйти
+        </button>
       </nav>
-    </div>
-  </header>
+    </header>
 
-  <RouterView />
+    <main class="app-main-content">
+      <router-view />
+    </main>
+  </div>
 </template>
 
 <style scoped>
