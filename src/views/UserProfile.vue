@@ -14,7 +14,7 @@
 </script>
 
 <style scoped>
-.report-form-page {
+.user-profile {
   max-width: 600px;
   margin: 50px auto;
   padding: 20px;
