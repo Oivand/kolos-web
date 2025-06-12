@@ -38,4 +38,4 @@ jspm_packages/
 Thumbs.db # Windows files
 
 # Vite specific
-.vite/
+.vite/gir
